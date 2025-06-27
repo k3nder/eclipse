@@ -1,0 +1,13 @@
+[package]
+name = "eclipse"
+version = "0.1.0"
+edition = "2024"
+authors = [ "k3nder <k3nder@outlook.es>" ]
+license = "MIT"
+description = "System library for eclipse protocol"
+
+[lib]
+crate-type = [ "cdylib" ]
+
+[dependencies]
+libc = "0.2.174"

@@ -1,0 +1,8 @@
+[workspace]
+resolver = "2"
+members = [
+	"eclipse",
+	"eclipse-protocol",
+	"eclipse-client",
+	"eclipse-server",
+]
