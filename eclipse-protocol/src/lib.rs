@@ -12,8 +12,8 @@ impl Attachment {
     pub fn to_bytes(self) -> Vec<u8> {
         let ip = self.ip.as_bytes().to_vec();
         let token = self.token.as_bytes().to_vec();
-        let ip_len = ip.len().to_be_bytes();
-        let token_len = token.len().to_be_bytes();
+        let ip_len = (ip.len() as u32).to_be_bytes();
+        let token_len = (token.len() as u32).to_be_bytes();
 
         let mut bytes = Vec::new();
         bytes.extend(ip_len);
@@ -47,5 +47,15 @@ pub fn attach(ip: &str, token: &str) -> Attachment {
     Attachment {
         ip: ip.to_owned(),
         token: token.to_owned(),
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn to_bytes_from_test() {
+        let bytes = super::attach("google.com", "1212").to_bytes();
+        println!("{:?}", bytes);
+        super::Attachment::from_bytes(bytes).unwrap();
     }
 }
