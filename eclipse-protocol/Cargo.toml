@@ -2,5 +2,10 @@
 name = "eclipse-protocol"
 version = "0.1.0"
 edition = "2024"
+authors = ["k3nder"]
+license = "MIT"
+description = "eclipse protocol lib"
 
 [dependencies]
+thiserror = "2.0.12"
+tracing = "0.1.41"
