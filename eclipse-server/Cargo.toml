@@ -2,5 +2,21 @@
 name = "eclipse-server"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+authors = ["k3nder"]
 
 [dependencies]
+anyhow = "1.0.98"
+config = { version = "0.15.11", features = ["ini", "toml"], default-features = false }
+eclipse-protocol = { version = "0.1.0", path = "../eclipse-protocol" }
+hmac = "0.12.1"
+jwt = "0.16.0"
+sha2 = "0.10.9"
+thiserror = "2.0.12"
+tokio = { version = "1.45.1", features = ["rt", "rt-multi-thread", "macros", "net", "io-util"] }
+tracing = "0.1.41"
+tracing-subscriber = "0.3.19"
+
+[features]
+default = ["tcp"]
+tcp = []
