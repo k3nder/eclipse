@@ -5,8 +5,8 @@ use std::io::Write;
 pub mod error;
 
 pub struct Attachment {
-    ip: String,
-    token: String,
+    pub ip: String,
+    pub token: String,
 }
 impl Attachment {
     pub fn to_bytes(self) -> Vec<u8> {
