@@ -22,7 +22,7 @@ impl Attachment {
         bytes.extend(token);
         bytes
     }
-    fn from_bytes(vec: Vec<u8>) -> Result<Attachment, crate::error::Error> {
+    pub fn from_bytes(vec: Vec<u8>) -> Result<Attachment, crate::error::Error> {
         let mut buf = Cursor::new(vec);
         let mut ip_len = [0u8; 4];
         buf.read_exact(&mut ip_len)?;
